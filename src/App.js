@@ -1,39 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginForm from './components/LoginForm';
-import UserProfile from './components/UserProfile';
-import './App.css';
-
-const App = () => {
-  const [token, setToken] = useState('');
-
-  useEffect(() => {
-    const storedToken = localStorage.getItem('token');
-    if (storedToken) {
-      setToken(storedToken);
-    }
-  }, []);
-
-  const handleLoginSuccess = (token) => {
-    setToken(token);
-    localStorage.setItem('token', token);
-  };
-
-  const handleLogout = () => {
-    setToken('');
-    localStorage.removeItem('token');
-  };
-
-  return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<LoginForm onLoginSuccess={handleLoginSuccess} />} />
-          <Route path="/profile" element={<UserProfile token={token} onLogout={handleLogout} />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-
-export default App;
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_1 = require("react");
+const react_router_dom_1 = require("react-router-dom");
+const LoginForm_1 = __importDefault(require("./components/LoginForm"));
+const UserProfile_1 = __importDefault(require("./components/UserProfile"));
+require("./App.css");
+const App = () => {
+    const [token, setToken] = (0, react_1.useState)('');
+    (0, react_1.useEffect)(() => {
+        const storedToken = localStorage.getItem('token');
+        if (storedToken) {
+            setToken(storedToken);
+        }
+    }, []);
+    const handleLoginSuccess = (token) => {
+        setToken(token);
+        localStorage.setItem('token', token);
+    };
+    const handleLogout = () => {
+        setToken('');
+        localStorage.removeItem('token');
+    };
+    return ((0, jsx_runtime_1.jsx)(react_router_dom_1.BrowserRouter, { children: (0, jsx_runtime_1.jsx)("div", { className: "App", children: (0, jsx_runtime_1.jsxs)(react_router_dom_1.Routes, { children: [(0, jsx_runtime_1.jsx)(react_router_dom_1.Route, { path: "/", element: (0, jsx_runtime_1.jsx)(LoginForm_1.default, { onLoginSuccess: handleLoginSuccess }) }), (0, jsx_runtime_1.jsx)(react_router_dom_1.Route, { path: "/profile", element: (0, jsx_runtime_1.jsx)(UserProfile_1.default, { token: token, onLogout: handleLogout }) })] }) }) }));
+};
+exports.default = App;
