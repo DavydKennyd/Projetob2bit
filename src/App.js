@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginForm from './components/LoginForm';
+import UserProfile from './components/UserProfile';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    if (storedToken) {
+      setToken(storedToken);
+    }
+  }, []);
+
+  const handleLoginSuccess = (token) => {
+    setToken(token);
+    localStorage.setItem('token', token);
+  };
+
+  const handleLogout = () => {
+    setToken('');
+    localStorage.removeItem('token');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<LoginForm onLoginSuccess={handleLoginSuccess} />} />
+          <Route path="/profile" element={<UserProfile token={token} onLogout={handleLogout} />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
