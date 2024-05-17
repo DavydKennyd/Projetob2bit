@@ -23,8 +23,6 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLoginSuccess }) => {
       if (profile.avatar) {
         onLoginSuccess(token);
         navigate('/');
-      } else {
-        setError('Avatar não encontrado no perfil do usuário');
       }
     } catch (err: any) {
       setError('Invalid email or password');

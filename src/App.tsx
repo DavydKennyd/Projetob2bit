@@ -33,6 +33,7 @@ const App: React.FC = () => {
             path="/"
             element={token ? <UserProfile token={token} onLogout={handleLogout} /> : <Navigate to="/login" />}
           />
+          <Route path="*" element={<Navigate to={token ? "/profile" : "/login"} />} />
         </Routes>
       </div>
     </Router>

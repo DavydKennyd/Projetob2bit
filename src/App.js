@@ -25,9 +25,6 @@ const App = () => {
         setToken(null);
         localStorage.removeItem('token');
     };
-    if (!token) {
-        return (0, jsx_runtime_1.jsx)(react_router_dom_1.Navigate, { to: "/login" });
-    }
-    return ((0, jsx_runtime_1.jsx)(react_router_dom_1.BrowserRouter, { children: (0, jsx_runtime_1.jsx)("div", { className: "App", children: (0, jsx_runtime_1.jsxs)(react_router_dom_1.Routes, { children: [(0, jsx_runtime_1.jsx)(react_router_dom_1.Route, { path: "/", element: (0, jsx_runtime_1.jsx)(UserProfile_1.default, { token: token, onLogout: handleLogout }) }), (0, jsx_runtime_1.jsx)(react_router_dom_1.Route, { path: "/login", element: (0, jsx_runtime_1.jsx)(LoginForm_1.default, { onLoginSuccess: handleLoginSuccess }) })] }) }) }));
+    return ((0, jsx_runtime_1.jsx)(react_router_dom_1.BrowserRouter, { children: (0, jsx_runtime_1.jsx)("div", Object.assign({ className: "App" }, { children: (0, jsx_runtime_1.jsxs)(react_router_dom_1.Routes, { children: [(0, jsx_runtime_1.jsx)(react_router_dom_1.Route, { path: "/login", element: (0, jsx_runtime_1.jsx)(LoginForm_1.default, { onLoginSuccess: handleLoginSuccess }) }), (0, jsx_runtime_1.jsx)(react_router_dom_1.Route, { path: "/", element: token ? (0, jsx_runtime_1.jsx)(UserProfile_1.default, { token: token, onLogout: handleLogout }) : (0, jsx_runtime_1.jsx)(react_router_dom_1.Navigate, { to: "/login" }) })] }) })) }));
 };
 exports.default = App;

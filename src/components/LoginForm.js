@@ -30,11 +30,8 @@ const LoginForm = ({ onLoginSuccess }) => {
             console.log('Perfil do usuário', profile);
             if (profile.avatar) {
                 onLoginSuccess(token);
-                navigate('/profile');
                 console.log('Aqui está a informação do token', token);
-            }
-            else {
-                setError('Avatar não encontrado no perfil do usuário');
+                navigate('/');
             }
         }
         catch (err) {
