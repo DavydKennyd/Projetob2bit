@@ -30,8 +30,8 @@ const LoginForm = ({ onLoginSuccess }) => {
             console.log('Perfil do usuário', profile);
             if (profile.avatar) {
                 onLoginSuccess(token);
-                console.log('Aqui está a informação do token', token);
                 navigate('/');
+                console.log('Aqui está a informação do token', token);
             }
         }
         catch (err) {
