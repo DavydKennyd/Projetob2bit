@@ -32,7 +32,7 @@ const UserProfile = ({ token, onLogout }) => {
         return (0, jsx_runtime_1.jsx)("div", { children: "Loading..." });
     }
     // URL da imagem de perfil ou imagem padrão se avatar for null
-    const profileImage = profile.avatar ? profile.avatar.image_high_url : 'default-profile-pic.jpg';
+    const profileImage = profile.avatar ? profile.avatar.image_high_url : 'https://github.com/DavydKennyd/icone_perfil/blob/main/default-profile.png?raw=true';
     return ((0, jsx_runtime_1.jsxs)("div", { children: [(0, jsx_runtime_1.jsx)("header", { className: "page-header", children: (0, jsx_runtime_1.jsx)("button", { className: "logout-button", onClick: handleLogout, children: "Logout" }) }), (0, jsx_runtime_1.jsx)("div", { className: "center-container", children: (0, jsx_runtime_1.jsxs)("div", { className: "profile-box", children: [(0, jsx_runtime_1.jsx)("div", { className: "profile-pic-container", children: (0, jsx_runtime_1.jsx)("img", { src: profileImage, alt: "Foto de perfil", className: "profile-pic" }) }), (0, jsx_runtime_1.jsxs)("div", { className: "profile-info", children: [(0, jsx_runtime_1.jsx)("h2", { className: "username", children: (0, jsx_runtime_1.jsxs)("strong", { children: [(0, jsx_runtime_1.jsx)("span", { className: "lighter", children: "Your" }), " Name:"] }) }), (0, jsx_runtime_1.jsxs)("div", { className: "name-container", children: [profile.name, " ", profile.last_name] }), (0, jsx_runtime_1.jsx)("h2", { className: "email", children: (0, jsx_runtime_1.jsxs)("strong", { children: [(0, jsx_runtime_1.jsx)("span", { className: "lighter", children: "Your" }), " E-mail:"] }) }), (0, jsx_runtime_1.jsx)("div", { className: "email-container", children: profile.email })] })] }) })] }));
 };
 exports.default = UserProfile;

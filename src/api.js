@@ -1,4 +1,3 @@
-// src/api.js
 export const login = (email, password) => {
   return fetch('https://api.homologation.cliqdrive.com.br/auth/login/', {
     method: 'POST',

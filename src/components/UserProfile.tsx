@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { getProfile } from '../api';
+import axios from 'axios';
 import './UserProfile.css';
 
 interface UserProfileProps {
@@ -11,53 +11,39 @@ interface UserProfileProps {
 const UserProfile: React.FC<UserProfileProps> = ({ token, onLogout }) => {
   const [profile, setProfile] = useState<any>(null);
   const [error, setError] = useState<string>('');
+  const [profileImage, setProfileImage] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log('Fetching profile with token:', token);
     getProfile(token)
-      .then(data => {
-        console.log('Received profile data:', data);
-        setProfile(data);
-      })
-      .catch(err => {
-        console.error('Error fetching profile:', err);
-        setError('Failed to fetch profile');
-      });
+      .then(data => setProfile(data))
+      .catch(err => setError('Failed to fetch profile'));
   }, [token]);
+
+  useEffect(() => {
+    if (profile) {
+      if (profile.avatar && profile.avatar.image_high_url) {
+        loadProfileImage(profile.avatar.image_high_url);
+      } else {
+        setProfileImage('https://github.com/DavydKennyd/icone_perfil/blob/main/default-profile.png?raw=true');
+      }
+    }
+  }, [profile]);
+
+  const loadProfileImage = (url: string) => {
+    axios.get(url, { responseType: 'arraybuffer' })
+      .then(response => {
+        const blob = new Blob([response.data], { type: response.headers['content-type'] });
+        const imageUrl = URL.createObjectURL(blob);
+        setProfileImage(imageUrl);
+      })
+      .catch(() => {
+        setProfileImage('https://github.com/DavydKennyd/icone_perfil/blob/main/default-profile.png?raw=true');
+      });
+  };
 
   const handleLogout = () => {
     onLogout();
   };
-
-  useEffect(() => {
-    if (profile && profile.avatar) {
-      loadProfileImage(); // Carrega a imagem do perfil se não for a imagem padrão
-    }
-  }, [profile]);
-
-  const loadProfileImage = () => {
-    axios.get(profile.avatar.image_high_url, { responseType: 'arraybuffer' })
-      .then(response => {
-        const blob = new Blob([response.data], { type: response.headers['content-type'] });
-        const imageUrl = URL.createObjectURL(blob);
-        const img = new Image();
-        img.src = imageUrl;
-        img.onload = () => {
-          URL.revokeObjectURL(imageUrl);
-        };
-        const profileImageContainer = document.getElementById('profile-image');
-        if (profileImageContainer) {
-          profileImageContainer.appendChild(img); // Verifica se o elemento existe antes de adicionar a imagem
-        }
-      })
-      .catch(error => {
-        console.error('Error loading profile image:', error);
-      });
-  };
-
-  if (!token) {
-    return <div>Please log in to view your profile.</div>;
-  }
 
   if (error) {
     return (
@@ -80,7 +66,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ token, onLogout }) => {
       <div className="center-container">
         <div className="profile-box">
           <div className="profile-pic-container" id="profile-image">
-            {/* O elemento para a imagem do perfil será adicionado aqui */}
+            <img src={profileImage || 'https://github.com/DavydKennyd/icone_perfil/blob/main/default-profile.png?raw=true'} alt="Profile" />
           </div>
           <div className="profile-info">
             <h2 className="username"><strong><span className="lighter">Your</span> Name:</strong></h2>

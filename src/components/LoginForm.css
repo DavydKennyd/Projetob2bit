@@ -90,3 +90,12 @@ button:hover {
     color: red;
     margin-top: 10px;
 }
+/* src/components/LoginForm.css */
+.logo-image {
+    display: block;
+    margin: 0 auto;
+    width: 50%; /* Ajuste o tamanho conforme necessário */
+    max-width: 150px; /* Tamanho máximo da logo */
+    height: auto;
+}
+

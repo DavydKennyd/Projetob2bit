@@ -1,6 +1,6 @@
  {
   "compilerOptions": {
-    
+    "typeRoots": ["./node_modules/@types", "./src/declarations.d.ts"],
     "target": "es2016",                                  
     "module": "commonjs",                                
     "strict": true,                                      

@@ -60,15 +60,18 @@ body, html {
 
 .profile-pic-container {
     margin-bottom: 20px;
-}
-
-.profile-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-pic-container img {
     width: 75px;
     height: 75px;
-    border-radius: 50px;
+    border-radius: 56.25px; /* Isso é (75/2) */
     object-fit: cover;
-}
-
+    border: 2px solid #ddd;
+  }
 .username {
     margin: 0;
 }

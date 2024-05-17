@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import LoginForm from './components/LoginForm';
 import UserProfile from './components/UserProfile';
 import './App.css';
 
 const App: React.FC = () => {
-  const [token, setToken] = useState<string>('');
+  const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
@@ -20,7 +20,7 @@ const App: React.FC = () => {
   };
 
   const handleLogout = () => {
-    setToken('');
+    setToken(null);
     localStorage.removeItem('token');
   };
 
@@ -28,13 +28,10 @@ const App: React.FC = () => {
     <Router>
       <div className="App">
         <Routes>
+          <Route path="/login" element={<LoginForm onLoginSuccess={handleLoginSuccess} />} />
           <Route
             path="/"
-            element={<LoginForm onLoginSuccess={handleLoginSuccess} />}
-          />
-          <Route
-            path="/profile"
-            element={<UserProfile token={token} onLogout={handleLogout} />}
+            element={token ? <UserProfile token={token} onLogout={handleLogout} /> : <Navigate to="/login" />}
           />
         </Routes>
       </div>
