@@ -2,6 +2,9 @@
 ## Descrição do Projeto
 Este projeto consiste em um sistema de login e perfil de usuário desenvolvido em React e TypeScript. Ele inclui componentes para exibir um formulário de login, gerenciar o estado de autenticação e exibir informações do perfil do usuário após o login bem-sucedido. Abaixo está a documentação dos principais componentes e funcionalidades do projeto.
 
+## Para acessar o site:
+- Para acessar o repositório do projeto, clique [aqui](https://projetob2bit.vercel.app/login).
+
 ## Estrutura do Projeto
 - App.tsx: Componente principal que gerencia as rotas e o estado de autenticação.
 - LoginForm.tsx: Componente de formulário de login que lida com a autenticação do usuário.

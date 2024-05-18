@@ -18,6 +18,7 @@ const UserProfile = ({ token, onLogout }) => {
             .catch(err => setError('Failed to fetch profile'));
     }, [token]);
     (0, react_1.useEffect)(() => {
+        /*CASO O USUARIO NÃO TENHA  FOTO DE PERFIL IRÁ EXIBIR UMA FOTO PADRÃO QUE ESTÁ HOSPEDADO ONLINE NO MEU GITHUB*/ 
         if (profile) {
             if (profile.avatar && profile.avatar.image_high_url) {
                 loadProfileImage(profile.avatar.image_high_url);
