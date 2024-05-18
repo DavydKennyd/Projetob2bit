@@ -27,36 +27,38 @@ Why: para confirmar que estou logado e visualizar meus dados pessoais.
 
 
 ## Estrutura do Projeto
-```bash
-    ├── public
-    │ ├── index.html
-    │ └── ...
-    ├── src
-    │ ├── components
-    │ │ ├── LoginForm.css
-    │ │ ├── LoginForm.js
-    │ │ ├── LoginForm.tsx
-    │ │ ├── UserProfile.css
-    │ │ ├── UserProfile.js
-    │ │ ├── UserProfile.tsx
-    │ │ └── ...
-    │ ├── api
-    │ │ ├── api.d.ts
-    │ │ ├── api.js
-    │ │ └── index.ts
-    │ ├── App.css
-    │ ├── App.js
-    │ ├── App.test.js
-    │ ├── App.tsx
-    │ ├── declarations.d.ts
-    │ ├── index.css
-    │ ├── index.js
-    │ ├── index.tsx
-    │ ├── logo.svg
-    │ ├── reportWebVitals.js
-    │ └── setupTest.js
-    └── package.json
 
+     ```bash
+     .
+     ├── public
+     │   ├── index.html
+     │   └── ...
+     ├── src
+     │   ├── components
+     │   │   ├── LoginForm.css
+     │   │   ├── LoginForm.js
+     │   │   ├── LoginForm.tsx
+     │   │   ├── UserProfile.css
+     │   │   ├── UserProfile.js
+     │   │   ├── UserProfile.tsx
+     │   │   └── ...
+     │   ├── api
+     │   │   ├── api.d.ts
+     │   │   ├── api.js
+     │   │   └── index.ts
+     │   ├── App.css
+     │   ├── App.js
+     │   ├── App.test.js
+     │   ├── App.tsx
+     │   ├── declarations.d.ts
+     │   ├── index.css
+     │   ├── index.js
+     │   ├── index.tsx
+     │   ├── logo.svg
+     │   ├── reportWebVitals.js
+     │   └── setupTest.js
+     └── package.json
+     ```
 
 ## Descrição dos Diretórios e Arquivos
 
