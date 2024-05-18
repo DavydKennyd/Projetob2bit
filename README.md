@@ -27,34 +27,35 @@ Why: para confirmar que estou logado e visualizar meus dados pessoais.
 
 
 ## Estrutura do Projeto
-├── public
-│ ├── index.html
-│ └── ...
-├── src
-│ ├── components
-│ │ ├── LoginForm.css
-│ │ ├── LoginForm.js
-│ │ ├── LoginForm.tsx
-│ │ ├── UserProfile.css
-│ │ ├── UserProfile.js
-│ │ ├── UserProfile.tsx
-│ │ └── ...
-│ ├── api
-│ │ ├── api.d.ts
-│ │ ├── api.js
-│ │ └── index.ts
-│ ├── App.css
-│ ├── App.js
-│ ├── App.test.js
-│ ├── App.tsx
-│ ├── declarations.d.ts
-│ ├── index.css
-│ ├── index.js
-│ ├── index.tsx
-│ ├── logo.svg
-│ ├── reportWebVitals.js
-│ └── setupTest.js
-└── package.json
+```bash
+    ├── public
+    │ ├── index.html
+    │ └── ...
+    ├── src
+    │ ├── components
+    │ │ ├── LoginForm.css
+    │ │ ├── LoginForm.js
+    │ │ ├── LoginForm.tsx
+    │ │ ├── UserProfile.css
+    │ │ ├── UserProfile.js
+    │ │ ├── UserProfile.tsx
+    │ │ └── ...
+    │ ├── api
+    │ │ ├── api.d.ts
+    │ │ ├── api.js
+    │ │ └── index.ts
+    │ ├── App.css
+    │ ├── App.js
+    │ ├── App.test.js
+    │ ├── App.tsx
+    │ ├── declarations.d.ts
+    │ ├── index.css
+    │ ├── index.js
+    │ ├── index.tsx
+    │ ├── logo.svg
+    │ ├── reportWebVitals.js
+    │ └── setupTest.js
+    └── package.json
 
 
 ## Descrição dos Diretórios e Arquivos
@@ -143,9 +144,5 @@ Siga os passos abaixo para configurar e executar o projeto localmente.
 - Axios
 - CSS
 
-## Contribuição
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
-
-## Licença
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-Screenshots (Opcional)
+## Feito Por
+- Davyd Kennyd 
