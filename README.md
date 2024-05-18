@@ -18,30 +18,79 @@ Who: Como um usuário autenticado,
 What: eu quero ver minhas informações de perfil,
 Why: para confirmar que estou logado e visualizar meus dados pessoais.
 ## Componentes
-1- App.tsx
+### App.tsx
 - Descrição: O componente App gerencia o estado de autenticação e as rotas da aplicação. Utiliza useState para armazenar o token de autenticação e useEffect para recuperar o token armazenado no localStorage. Define duas rotas: uma para o login (/login) e outra para o perfil do usuário (/).
-2- LoginForm.tsx
+### LoginForm.tsx
 - Descrição: O componente LoginForm gerencia o formulário de login. Utiliza useState para armazenar os valores de email, senha e possíveis erros. O método handleSubmit autentica o usuário e, em caso de sucesso, armazena o token e navega para a página de perfil. Em caso de erro, exibe uma mensagem de erro.
-3- serProfile.tsx
+### UserProfile.tsx
 - Descrição: O componente UserProfile exibe as informações do perfil do usuário. Utiliza useState para armazenar o perfil, a imagem do perfil e possíveis erros. Utiliza useEffect para buscar o perfil do usuário e carregar a imagem do perfil. Possui um botão de logout que limpa o token de autenticação e redireciona para a página de login.
 
 
 ## Estrutura do Projeto
-.
 ├── public
 │ ├── index.html
 │ └── ...
 ├── src
 │ ├── components
+│ │ ├── LoginForm.css
+│ │ ├── LoginForm.js
 │ │ ├── LoginForm.tsx
+│ │ ├── UserProfile.css
+│ │ ├── UserProfile.js
 │ │ ├── UserProfile.tsx
 │ │ └── ...
 │ ├── api
+│ │ ├── api.d.ts
+│ │ ├── api.js
 │ │ └── index.ts
+│ ├── App.css
+│ ├── App.js
+│ ├── App.test.js
 │ ├── App.tsx
+│ ├── declarations.d.ts
+│ ├── index.css
+│ ├── index.js
 │ ├── index.tsx
-│ └── ...
+│ ├── logo.svg
+│ ├── reportWebVitals.js
+│ └── setupTest.js
 └── package.json
+
+
+## Descrição dos Diretórios e Arquivos
+
+### public
+- **index.html**: Arquivo HTML principal do projeto.
+
+### src
+- **components**: Diretório contendo componentes reutilizáveis.
+  - **LoginForm.css**: Estilos para o componente LoginForm.
+  - **LoginForm.js**: Componente LoginForm em JavaScript.
+  - **LoginForm.tsx**: Componente LoginForm em TypeScript.
+  - **UserProfile.css**: Estilos para o componente UserProfile.
+  - **UserProfile.js**: Componente UserProfile em JavaScript.
+  - **UserProfile.tsx**: Componente UserProfile em TypeScript.
+
+- **api**: Diretório contendo arquivos relacionados à API.
+  - **api.d.ts**: Declarações TypeScript para a API.
+  - **api.js**: Código JavaScript para a API.
+  - **index.ts**: Ponto de entrada TypeScript para a API.
+
+- **App.css**: Estilos para o componente principal do aplicativo.
+- **App.js**: Componente principal do aplicativo em JavaScript.
+- **App.test.js**: Testes para o componente principal do aplicativo.
+- **App.tsx**: Componente principal do aplicativo em TypeScript.
+- **declarations.d.ts**: Arquivo de declarações TypeScript.
+- **index.css**: Estilos globais do projeto.
+- **index.js**: Ponto de entrada do aplicativo em JavaScript.
+- **index.tsx**: Ponto de entrada do aplicativo em TypeScript.
+- **logo.svg**: Logo do projeto.
+- **reportWebVitals.js**: Arquivo para medir a performance do aplicativo.
+- **setupTest.js**: Configurações para os testes.
+
+### package.json
+Arquivo de configuração do npm, contendo dependências e scripts do projeto.
+
 
 ## Instalação e Configuração
 Siga os passos abaixo para configurar e executar o projeto localmente.
@@ -58,16 +107,16 @@ Siga os passos abaixo para configurar e executar o projeto localmente.
    cd seu_repositorio
 
 
-2.Instale as dependências:
+2. Instale as dependências:
     ```bash
     npm install
     # ou
     yarn install
     ```
 
-3.Configure as variáveis de ambiente no arquivo `.env` (se necessário).
+3. Configure as variáveis de ambiente no arquivo `.env` (se necessário).
 
-4.Inicie a aplicação:
+4. Inicie a aplicação:
     ```bash
     npm start
     # ou
@@ -93,20 +142,6 @@ Siga os passos abaixo para configurar e executar o projeto localmente.
 - React Router
 - Axios
 - CSS
-
-## Estrutura do Código
-
-### `LoginForm.tsx`
-Este componente é responsável por renderizar o formulário de login, capturar as credenciais do usuário e realizar a autenticação.
-
-### `UserProfile.tsx`
-Este componente é responsável por buscar e exibir as informações de perfil do usuário autenticado, incluindo o avatar.
-
-### `App.tsx`
-Este é o componente principal que gerencia as rotas e o estado de autenticação do usuário.
-
-### `api/index.ts`
-Este módulo contém funções para se comunicar com a API de autenticação e perfil.
 
 ## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
