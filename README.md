@@ -4,6 +4,7 @@ Este projeto consiste em um sistema de login e perfil de usuário desenvolvido e
 
 ## Para acessar o site:
 - Para acessar o repositório do projeto, clique [aqui](https://projetob2bit.vercel.app/login).
+- Para testar o site adiciona o email "cliente@youdrive.com" e a senha "password". Irá logar normalmente.
 
 ## Estrutura do Projeto
 - App.tsx: Componente principal que gerencia as rotas e o estado de autenticação.
